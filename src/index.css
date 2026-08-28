@@ -1,0 +1,187 @@
+:root {
+  --bg-primary: #F7F8FA;
+  --bg-secondary: #EEF2F7;
+  --text-primary: #111827;
+  --text-navy: #172554;
+  --accent-blue: #2563EB;
+  --electric-blue: #00AEEF;
+  --accent-purple: #7C3AED;
+  --mint: #10B981;
+  --warning: #F59E0B;
+  --threat: #EF4444;
+
+  /* Z-index layers */
+  --z-diagram-bg: 0;
+  --z-diagram-lines: 1;
+  --z-diagram-nodes: 10;
+  --z-diagram-content: 20;
+  --z-packet: 30;
+  --z-hud: 1000;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading { font-family: 'Space Grotesk', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.font-body { font-family: 'Inter', sans-serif; }
+
+.presentation-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 30%, #ffffff 0%, var(--bg-primary) 100%);
+  cursor: default;
+  user-select: none;
+}
+
+.world-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+}
+
+.scene {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  transform: translate(-50%, -50%);
+  overflow: hidden; /* CRITICAL: clip any diagram lines to scene bounds */
+}
+
+.hud {
+  position: fixed;
+  z-index: var(--z-hud);
+  pointer-events: none;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(23, 37, 84, 0.06);
+  border-radius: 12px;
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.badge-pass {
+  background: #ECFDF5;
+  color: #047857;
+  border: 1.5px solid #10B981;
+}
+.badge-fail {
+  background: #FEF2F2;
+  color: #B91C1C;
+  border: 1.5px solid #EF4444;
+}
+.badge-checking {
+  background: #FFFBEB;
+  color: #92400E;
+  border: 1.5px solid #F59E0B;
+}
+.badge-info {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border: 1.5px solid #3B82F6;
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   ============================================ */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes packet-glow {
+  0%, 100% { box-shadow: 0 0 8px 2px currentColor; }
+  50% { box-shadow: 0 0 20px 6px currentColor; }
+}
+
+@keyframes scan-line {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes packet-fly {
+  0% { transform: translate(0px, -50%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(150px, -50%); opacity: 0; }
+}
+
+@keyframes dash-flow {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes status-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes draw-path {
+  to { stroke-dashoffset: 0; }
+}
