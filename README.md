@@ -62,8 +62,6 @@ This is **not** a traditional PowerPoint or Keynote converted to HTML. This is a
 ## 👨‍💻 Author
 
 **Kamlesh**  
-Roll No. : 2446586  
-Submitted To: Ms. Hima Gandhi
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" alt="Waving Hand" width="45" height="45" />

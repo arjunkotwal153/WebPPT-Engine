@@ -35,11 +35,11 @@ const Scene1 = ({ coords, active }) => {
             <span className="font-mono" style={{ fontSize: '0.8rem', color: '#6B7280', letterSpacing: '0.15em' }}>SECURITY MODEL</span>
           </div>
           <h1 className="font-heading" style={{ fontSize: '5.5rem', color: '#172554', lineHeight: 0.95, fontWeight: 800, marginBottom: 20 }}>
-            ZERO-TRUST<br/>
+            ZERO-TRUST<br />
             <span style={{ color: '#2563EB' }}>SECURITY</span>
           </h1>
           <p className="font-mono" style={{ fontSize: '1rem', color: '#6B7280', letterSpacing: '0.12em', lineHeight: 1.6, marginBottom: 40 }}>
-            APPLIED TO MULTI-TENANT<br/>DATA WAREHOUSES
+            APPLIED TO MULTI-TENANT<br />DATA WAREHOUSES
           </p>
           <div style={{ display: 'flex', gap: 12, marginBottom: 40 }}>
             {['VERIFY', 'ISOLATE', 'MONITOR'].map(w => (
@@ -52,7 +52,9 @@ const Scene1 = ({ coords, active }) => {
             <div>
               <div style={{ fontWeight: 700, color: '#172554' }}>Submitted By:</div>
               <div>Kamlesh</div>
+              <div>BCA-3C</div>
               <div>Roll No. : 2446586</div>
+
             </div>
             <div>
               <div style={{ fontWeight: 700, color: '#172554' }}>Submitted To:</div>
